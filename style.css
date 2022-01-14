@@ -19,7 +19,6 @@ body{
 }
 /*HEADER*/
 header{
-  border: 2px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,18 +45,16 @@ header img{
 .searchbar{
  display: flex;
  align-items: center;
- 
- 
-}
+ }
 
 .searchbar input{
-  max-width: 600px;
+  width: 400px;
+  height: 40px;
   padding: 10px;
-  
   border-color: #C0C0C0;
 }
 
-.microphone{
+.search-button{
   width: 40px;
   height: 40px;
   display: flex;
@@ -67,20 +64,35 @@ header img{
   border-color: #C0C0C0;
   
 }
-.microphone i{
-  
+.microphone{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F8F8F8;
+  border-radius: 50%;
+  margin:0 20px;
+}
+
+.profile-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:20px;
 }
 
 /*MAIN*/
 main{
   display: flex;
-  border: 2px solid black;
+  
   flex-grow: 1;
 }
 /*MAIN SIDEBAR*/
 .side-bar{
   width: 240px;
   flex-shrink: 0;
+  overflow: scroll;
 }
 
 .widget{
@@ -227,6 +239,12 @@ main{
   .play-list-item{
     width:49%;
   }
+
+  /*header*/
+  .searchbar input{
+    width: 200px;
+    transition: linear 1s;
+  }
 }
 
 @media screen and (max-width:510px){
@@ -243,5 +261,22 @@ main{
 
   .card-header img{
     width: unset;
+  }
+
+  .searchbar input{
+    display: none;
+  }
+
+  .search-button, .microphone{
+    border:none;
+    border-radius: 50%;
+    background-color: inherit;
+    margin: 0;
+  }
+  .searchbar{
+    
+  }
+  header{
+    justify-content: center;
   }
 }
