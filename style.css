@@ -17,19 +17,67 @@ body{
   flex-direction: column;
   height: 100vh;
 }
-
+/*HEADER*/
 header{
-  padding: 30px;
   border: 2px solid red;
-  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logo__img{
+  width: 100px;
+  font-size: 0;
+}
+.logo i{
+  font-size: 20px;
+}
+
+header img{
+  width: 100%;
+}
+
+.searchbar{
+ display: flex;
+ align-items: center;
+ 
+ 
+}
+
+.searchbar input{
+  max-width: 600px;
+  padding: 10px;
+  
+  border-color: #C0C0C0;
+}
+
+.microphone{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F8F8F8;
+  border-color: #C0C0C0;
+  
+}
+.microphone i{
+  
+}
+
+/*MAIN*/
 main{
   display: flex;
   border: 2px solid black;
   flex-grow: 1;
 }
-
+/*MAIN SIDEBAR*/
 .side-bar{
   width: 240px;
   flex-shrink: 0;
@@ -178,7 +226,6 @@ main{
 
   .play-list-item{
     width:49%;
-   
   }
 }
 
