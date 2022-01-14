@@ -131,3 +131,28 @@ main{
 .card-body img{
   border-radius: 50%;
 }
+
+@media screen and (max-width:800px) {
+  .side-bar{
+    display: none;
+  }
+}
+
+@media screen and (min-width:801px) and (max-width:1330px){
+   .side-bar .widget:nth-child(2) .widget__menu .menu-item:not(:first-child),
+  .side-bar .widget:nth-child(3)
+  {
+    display: none;
+  }
+
+  .widget:nth-child(2) .menu-item{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .widget{
+    border: none;
+    padding-bottom: 0;
+  }
+}
+ 
