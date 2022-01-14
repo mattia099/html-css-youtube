@@ -155,4 +155,46 @@ main{
     padding-bottom: 0;
   }
 }
- 
+
+@media screen and (max-width:1140px){
+  .play-list{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .play-list-item{
+    width:32%;
+   
+  }
+}
+
+@media screen and (max-width:890px){
+  .play-list{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .play-list-item{
+    width:49%;
+   
+  }
+}
+
+@media screen and (max-width:510px){
+  .play-list{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .play-list-item{
+    width:100%;
+   
+  }
+
+  .card-header img{
+    width: unset;
+  }
+}
