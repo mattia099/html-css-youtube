@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{font-family: 'Open Sans', sans-serif;}
 
 ul{
   list-style-type: none;
@@ -90,7 +91,7 @@ main{
 }
 /*MAIN SIDEBAR*/
 .side-bar{
-  width: 240px;
+  max-width: 240px;
   flex-shrink: 0;
   overflow: scroll;
 }
@@ -105,7 +106,7 @@ main{
   padding: 10px 10px;
   display: flex;
   align-items: center;
-
+  cursor: pointer;
 }
 
 .menu-item:hover, .menu-item.active{
@@ -141,6 +142,7 @@ main{
   flex-grow: 1;
 }
 
+/*CATEGORIES*/
 .categories{
   display: flex;
   background-color: white;
@@ -156,8 +158,16 @@ main{
   line-height: 30px;
   white-space: nowrap;
   flex-shrink: 0;
+  cursor:pointer;
 }
 
+.categories .button-active, .categories li:hover{
+  background-color: #000;
+  color: white;
+}
+
+
+/*PLAY-LIST*/
 .play-list-wrapper{
   padding: 20px 30px;
 }
@@ -165,14 +175,42 @@ main{
 .play-list{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 30px;
+}
+
+.play-list-title{
+  font-size: 20px;
+  padding-bottom: 40px;
+}
+.play-list::after{
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #C0C0C0;
 }
 
 .play-list-item{
   width: 24%;
+  cursor: pointer;
+  position: relative;
+}
+
+.play-list-item:hover .card-header::after{
+  content: '';
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 99;
 }
 
 .card-header{
   margin-bottom: 10px;
+  position: relative;
+  font-size: 0;
 }
 
 .card-header img{
@@ -180,6 +218,7 @@ main{
   width: 100%;
   object-fit: cover;
   object-position: center;
+ 
 }
 
 .play-list-item .card-body{
@@ -200,7 +239,7 @@ main{
 
 @media screen and (min-width:801px) and (max-width:1330px){
    .side-bar .widget:nth-child(2) .widget__menu .menu-item:not(:first-child),
-  .side-bar .widget:nth-child(3)
+  .side-bar .widget:nth-child(3), .side-bar .widget:nth-child(4)
   {
     display: none;
   }
@@ -208,6 +247,10 @@ main{
   .widget:nth-child(2) .menu-item{
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  .menu-item{
+    flex-direction: column;
   }
 
   .widget{
@@ -225,7 +268,6 @@ main{
 
   .play-list-item{
     width:32%;
-   
   }
 }
 
@@ -273,9 +315,7 @@ main{
     background-color: inherit;
     margin: 0;
   }
-  .searchbar{
-    
-  }
+
   header{
     justify-content: center;
   }
